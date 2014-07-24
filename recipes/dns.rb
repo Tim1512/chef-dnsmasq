@@ -35,3 +35,8 @@ template "/etc/hosts_dnsmasq" do
   notifies :restart, "service[dnsmasq]"
 end
 
+cookbook_file "resolv.conf" do
+  path "/etc/resolv.conf"
+  owner "root"
+  action :create
+end
